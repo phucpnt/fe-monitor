@@ -1,0 +1,5 @@
+{
+  "presets": [ "es2015"],
+  "plugins": [ "add-module-exports", "babel-plugin-transform-decorators-legacy" ],
+  "compact": false
+}
