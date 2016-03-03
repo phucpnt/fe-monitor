@@ -19,10 +19,10 @@ function buildQuery(level, message, time = 1 * Date()) {
   let queryParams = [].concat(
     `${PARAM_LEVEL}=${level}`,
     `${PARAM_SCRIPT_TIME}=${time}`,
-    `${PARAM_MESSAGE}=${message}`,
+    `${PARAM_MESSAGE}=${message}`
   );
 
-  return window.encodeURI(queryParams.join('&'));
+  return encodeURI(queryParams.join('&'));
 }
 
 function createTrackingImage(url) {
@@ -56,10 +56,10 @@ export default function makeLogger({
 
   function doLog(level, message, ...args) {
     _console(level, message, ...args);
-    const trackImgUrl = trackUrl + '?' + buildQuery(level, message, type);
+    const trackImgUrl = trackUrl + '?' + buildQuery(level, message);
     createTrackingImage(trackImgUrl);
   }
-  
+
   return {
     debug: doLog.bind(undefined, LOG_DEBUG),
     info: doLog.bind(undefined, LOG_INFO),
