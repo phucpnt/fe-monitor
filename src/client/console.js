@@ -10,6 +10,10 @@ import {
 } from '../shared/constant';
 
 const emptyFunc = () => { /* do nothing */ };
+// const wConsole = window.console ? window.console : [LOG_INFO, LOG_DEBUG, LOG_WARN, LOG_ERROR].reduce((iter, key) => {
+//   iter[key] = () => {};
+//   return iter;
+// }, {});
 
 function buildQuery(level, message, time = 1 * Date()) {
   let queryParams = [].concat(
@@ -55,11 +59,7 @@ export default function makeLogger({
     const trackImgUrl = trackUrl + '?' + buildQuery(level, message, type);
     createTrackingImage(trackImgUrl);
   }
-
-  // function makeLog(level) { // ie8
-  //   return (...args) => doLog(level, ...args);
-  // }
-
+  
   return {
     debug: doLog.bind(undefined, LOG_DEBUG),
     info: doLog.bind(undefined, LOG_INFO),

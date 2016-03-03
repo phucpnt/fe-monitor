@@ -19,7 +19,6 @@ router.all('/i*.gif', (req, res) => {
     message: params[PARAM_MESSAGE],
     scriptType: params[PARAM_SCRIPT_TIME],
   });
-  console.log(params);
 
   res.type('gif');
   res.send(data);
