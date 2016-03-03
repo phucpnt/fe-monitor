@@ -1,6 +1,20 @@
 ### About
 This tools is a ground up monitor tracking on [sentifi.com](http://sentifi.com) frontend products.
 
+### Getting started
+
+1. Clone the repo
+2. On the cmd line: `npm install`
+
+### Daily basis development cmd:
+
+* `npm run start`: start the dev.
+* `npm run test-dev`: run the mocha test with dev.
+* `npm run build`: build the project.
+* `git commit`, `git push`, of course :)
+
+
+
 ### TODO
 
 * [ ] Unittest for client monitor script

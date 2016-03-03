@@ -25,11 +25,9 @@ export default function makeLogger({
 
   let logLayers = [];
   if (useConsole) logLayers.push(trackByBrowserConsle());
-  if (useBeacon) logLayers.push(trackByBeaconImage({host}));
+  if (useBeacon) logLayers.push(trackByBeaconImage({ host }));
 
-  const doLog = logLayers.reduce((next, logFn) => {
-    return logFn(next);
-  }, null);
+  const doLog = logLayers.reduce((next, logFn) => logFn(next), null);
 
   return {
     debug: doLog.bind(undefined, LOG_DEBUG),
