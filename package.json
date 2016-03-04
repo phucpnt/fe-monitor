@@ -1,6 +1,6 @@
 {
   "name": "fe-monitor",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Frontend minitor system",
   "main": "eindex.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "build-server": "babel ./src/server --out-dir ./dist/server && babel ./src/common --out-dir ./dist/common"
   },
   "author": "Phuc PNT. <mail@phucpnt.com>",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "dependencies": {
     "express": "^4.13.4",
     "mkdirp": "^0.5.1",
