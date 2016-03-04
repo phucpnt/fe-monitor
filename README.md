@@ -17,7 +17,7 @@ Ground up monitor tracking for [sentifi.com](http://sentifi.com) frontend produc
 
 ### TODO
 
-* [ ] Unittest for client monitor script
-* [ ] Build to production usage
+* [x] Unittest for client monitor script
+* [x] Build tool for production usage
 * [ ] Deploy/ update flow for monitor server
-* [ ] Integrate monitor script into frontend product
+* [ ] Integrate monitor script into frontend products
