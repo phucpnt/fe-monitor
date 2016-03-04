@@ -3,7 +3,7 @@ import {
   PARAM_MESSAGE,
   PARAM_SCRIPT_TIME,
   PARAM_TYPE,
-} from '../shared/constant';
+} from '../common/constant';
 
 export const emptyFunc = () => {/* do nothing */};
 

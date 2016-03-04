@@ -1,11 +1,12 @@
 import winston from 'winston';
 import path from 'path';
 import {
+  LOG_LOG,
   LOG_INFO,
   LOG_DEBUG,
   LOG_ERROR,
   LOG_WARN
-} from '../../shared/constant';
+} from '../../common/constant';
 
 const logFileSize = 5 * 1024 * 1024;
 const filePath = path.resolve(__dirname, '../../fe.log');

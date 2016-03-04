@@ -7,7 +7,7 @@ import {
   PARAM_MESSAGE,
   PARAM_SCRIPT_TIME,
   PARAM_TYPE,
-} from '../shared/constant';
+} from '../common/constant';
 import {
   emptyFunc
 } from './util';
