@@ -1,5 +1,5 @@
 ### About
-This tools is a ground up monitor tracking on [sentifi.com](http://sentifi.com) frontend products.
+Ground up monitor tracking for [sentifi.com](http://sentifi.com) frontend products.
 
 ### Getting started
 
