@@ -1,8 +1,8 @@
 import express from 'express';
 
-import makeRouter from './src/server/router';
+import makeRouter from './router';
 
-import config from './server.config.json';
+import config from '../../server.config.json';
 
 const app = express();
 const port = 3000;
