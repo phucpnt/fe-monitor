@@ -26,10 +26,8 @@ function makeLogger({
   });
 }
 
-export default (logFilePath) => {
-  const logger = makeLogger({
-    filePath: logFilePath
-  });
+export default (config) => {
+  const logger = makeLogger(config);
   return ({
     level = LOG_LOG,
     message,

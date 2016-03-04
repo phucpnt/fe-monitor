@@ -7,7 +7,7 @@ import config from './server.config.json';
 const app = express();
 const port = 3000;
 
-app.use('/', router(config));
+app.use('/', makeRouter(config));
 
 
 app.listen(port, '0.0.0.0', () => {
