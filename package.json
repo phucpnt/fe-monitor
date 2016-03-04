@@ -7,7 +7,7 @@
     "test": "mocha",
     "test-dev": "mocha --watch",
     "start": "nodemon index.js --exec babel-node",
-    "build": "browserify ./src/client/console.js -d -t [babelify] -t [uglifyify] | exorcist dist/client-console.js.map > dist/client-console.js"
+    "build": "browserify ./src/client/console.js -d -t [babelify] -t [uglifyify] | exorcist dist/client-monitor.js.map > dist/client-monitor.js"
   },
   "author": "Phuc PNT. <mail@phucpnt.com>",
   "license": "ISC",
