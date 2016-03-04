@@ -7,6 +7,7 @@
     "test": "mocha",
     "test-dev": "mocha --watch",
     "start": "nodemon ./src/server/index.js --exec babel-node",
+    "server": "node ./dist/server/index.js",
     "build": "npm run build-client && npm run build-server",
     "build-client": "browserify ./src/client/console.js -d -t [babelify] -t [uglifyify] | exorcist dist/client/client-monitor.js.map > dist/client/client-monitor.js",
     "build-server": "babel ./src/server --out-dir ./dist/server && babel ./src/common --out-dir ./dist/common"
