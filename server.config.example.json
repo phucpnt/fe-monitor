@@ -1,0 +1,4 @@
+{
+  "log_dir": "./log",
+  "log_size_in_mb": 5
+}

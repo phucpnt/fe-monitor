@@ -1,10 +1,13 @@
 import express from 'express';
-import router from './src/server/router';
+
+import makeRouter from './src/server/router';
+
+import config from './server.config.json';
 
 const app = express();
 const port = 3000;
 
-app.use('/', router);
+app.use('/', router(config));
 
 
 app.listen(port, '0.0.0.0', () => {

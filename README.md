@@ -8,6 +8,7 @@ Ground up monitor tracking for [sentifi.com](http://sentifi.com) frontend produc
 
 ### Daily basis development cmd:
 
+* `npm run`: start the server.
 * `npm run start`: start the dev.
 * `npm run test-dev`: run the mocha test with dev.
 * `npm run build`: build the project.
