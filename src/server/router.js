@@ -1,23 +1,26 @@
 import express from 'express';
-import log from './log';
+import makeLogger from './log';
 
 import {
   PARAM_LEVEL,
   PARAM_MESSAGE,
   PARAM_SCRIPT_TIME,
   PARAM_TYPE
-} from '../shared/constant';
+} from '../common/constant';
 
 let router = express.Router();
 
 router.all('/i*.gif', (req, res) => {
   const data = new Buffer('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64'); // transparent gif 1x1
-  const params = req.query;
+  const query = req.query;
+  const params = req.params;
+  console.log(params);
 
+  const log = makeLogger();
   log({
-    level: params[PARAM_LEVEL],
-    message: params[PARAM_MESSAGE],
-    scriptType: params[PARAM_SCRIPT_TIME],
+    level: query[PARAM_LEVEL],
+    message: query[PARAM_MESSAGE],
+    scriptType: query[PARAM_SCRIPT_TIME],
   });
 
   res.type('gif');

@@ -3,6 +3,7 @@ import {
   LOG_DEBUG,
   LOG_WARN,
   LOG_ERROR,
+  LOG_LOG,
   PARAM_LEVEL,
   PARAM_MESSAGE,
   PARAM_SCRIPT_TIME,
@@ -20,7 +21,7 @@ export default function makeLogger({
   host,
   useConsole = true,
   useBeacon = true,
-  logLevel = LOG_INFO
+  logLevel = LOG_LOG
 }) {
 
   let logLayers = [];
@@ -30,6 +31,7 @@ export default function makeLogger({
   const doLog = logLayers.reduce((next, logFn) => logFn(next), null);
 
   return {
+    log: doLog.bind(undefined, LOG_LOG),
     debug: doLog.bind(undefined, LOG_DEBUG),
     info: doLog.bind(undefined, LOG_INFO),
     warn: doLog.bind(undefined, LOG_WARN),

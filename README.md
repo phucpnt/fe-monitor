@@ -19,5 +19,9 @@ Ground up monitor tracking for [sentifi.com](http://sentifi.com) frontend produc
 
 * [x] Unittest for client monitor script
 * [x] Build tool for production usage
-* [ ] Deploy/ update flow for monitor server
+* [ ] Deploy/ update flow for monitor server.
+  * Resource: https://blog.risingstack.com/operating-node-in-production/
+  * [ ] Prepare tracking server
+  * [ ] Setting the supervisord
+  * [ ] Setting nginx
 * [ ] Integrate monitor script into frontend products

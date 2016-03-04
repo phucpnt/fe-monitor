@@ -8,30 +8,37 @@ import {
   LOG_WARN
 } from '../../common/constant';
 
-const logFileSize = 5 * 1024 * 1024;
-const filePath = path.resolve(__dirname, '../../fe.log');
+const LOG_FILE_SIZE = 5 * 1024 * 1024;
 
-const logger = new winston.Logger({
-  transports: [
-    new(winston.transports.Console)(),
-    new(winston.transports.File)({
-      filename: filePath,
-      maxsize: logFileSize,
-      logtash: true
-    }),
-  ]
-});
-
-export default ({
-  level = LOG_INFO,
-  message,
-  scriptTime
-}) => {
-
-  console.log(filePath);
-
-  logger.log(level, message, {
-    scriptTime
+function makeLogger({
+  filePath,
+  fileSize = LOG_FILE_SIZE
+}) {
+  return new winston.Logger({
+    transports: [
+      new(winston.transports.Console)(),
+      new(winston.transports.File)({
+        filename: filePath,
+        maxsize: LOG_FILE_SIZE,
+        logtash: true
+      }),
+    ]
   });
+}
 
+export default (logFilePath) => {
+  const logger = makeLogger({
+    filePath: logFilePath
+  });
+  return ({
+    level = LOG_LOG,
+    message,
+    scriptTime
+  }) => {
+
+    logger.log(level, message, {
+      scriptTime
+    });
+
+  };
 };
