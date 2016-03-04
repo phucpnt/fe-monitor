@@ -11,8 +11,8 @@ export function buildTrackQuery(level, message, time = 1 * Date()) {
   let queryParams = [].concat(
     `${PARAM_LEVEL}=${level}`,
     `${PARAM_SCRIPT_TIME}=${time}`,
-    `${PARAM_MESSAGE}=${message}`
+    `${PARAM_MESSAGE}=${encodeURIComponent(message)}`
   );
 
-  return encodeURI(queryParams.join('&'));
+  return queryParams.join('&');
 }

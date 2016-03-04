@@ -1,5 +1,6 @@
 import express from 'express';
 import makeLogger from './log';
+import path from 'path';
 
 import {
   PARAM_LEVEL,
@@ -10,13 +11,12 @@ import {
 
 let router = express.Router();
 
-router.all('/i*.gif', (req, res) => {
+router.all('/_*.gif', (req, res) => {
   const data = new Buffer('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64'); // transparent gif 1x1
   const query = req.query;
-  const params = req.params;
-  console.log(params);
+  const label = req.params[0];
 
-  const log = makeLogger();
+  const log = makeLogger(path.resolve(__dirname, `../${label}.log`));
   log({
     level: query[PARAM_LEVEL],
     message: query[PARAM_MESSAGE],

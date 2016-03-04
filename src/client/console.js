@@ -17,6 +17,9 @@ import {
 import trackByBeaconImage from './trackByBeaconImage';
 import trackByBrowserConsle from './trackByBrowserConsole';
 
+// log utils
+import makeLogProfile from './logProfile';
+
 export default function makeLogger({
   host,
   useConsole = true,
@@ -36,5 +39,6 @@ export default function makeLogger({
     info: doLog.bind(undefined, LOG_INFO),
     warn: doLog.bind(undefined, LOG_WARN),
     error: doLog.bind(undefined, LOG_WARN),
+    prof: makeLogProfile(doLog),
   };
 }
